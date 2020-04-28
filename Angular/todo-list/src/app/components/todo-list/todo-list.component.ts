@@ -8,12 +8,15 @@ import { Todo } from '../../interfaces/Todo';
 export class TodoListComponent implements OnInit {
   todos: Todo[];
   inputText: string;
+  idForTodo: number;
   beforeEditeCaches: string;
+  filter: string;
   constructor() {}
 
   ngOnInit() {
-    this.beforeEditeCaches = '';
+    this.filter = 'all';
     this.inputText = '';
+    this.beforeEditeCaches = '';
     this.todos = [
       {
         id: 1,
@@ -41,12 +44,13 @@ export class TodoListComponent implements OnInit {
       return;
     }
     this.todos.push({
-      id: 4,
+      id: this.idForTodo,
       title: this.inputText,
       completed: false,
       editing: false,
     });
     this.inputText = '';
+    this.idForTodo++;
   }
 
   editeTodo(todo: Todo): void {
@@ -78,7 +82,20 @@ export class TodoListComponent implements OnInit {
   atLeastOneCompleted(): boolean {
     return this.todos.filter((todo) => todo.completed).length > 0;
   }
+
   clearCompleted(): void {
     this.todos = this.todos.filter((todo) => !todo.completed);
+  }
+
+  todosFiltered(): Todo[] {
+    if (this.filter === 'all') {
+      return this.todos;
+    } else if (this.filter === 'active') {
+      return this.todos.filter((todo) => !todo.completed);
+    } else if (this.filter === 'completed') {
+      return this.todos.filter((todo) => todo.completed);
+    }
+
+    return this.todos;
   }
 }
