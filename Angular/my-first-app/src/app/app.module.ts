@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { SquareComponent } from './square/square.component';
+
+import { SuccessAlertComponent } from './components/success-alert/success-alert.component';
+import { FailedAlertComponent } from './components/failed-alert/failed-alert.component';
 
 @NgModule({
-  declarations: [AppComponent, SquareComponent],
+  declarations: [AppComponent, SuccessAlertComponent, FailedAlertComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

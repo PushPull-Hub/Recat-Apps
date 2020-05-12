@@ -36,19 +36,19 @@ export default {
       index: 1,
       songs: [
         {
-          title: "I Will Survive",
+          title: "Blue Monday",
           artist: "Golria Gainor",
-          src: require("./assets/I-will-survive.mp3")
+          src: require("./assets/blue-monday.mp3")
         },
         {
-          title: "Into The Grouve",
+          title: "Let Me Go",
           artist: "Madonna ",
-          src: require("./assets/madonna.mp3")
+          src: require("./assets/let-me-go.mp3")
         },
         {
-          title: "Making Plans",
+          title: "Love and Ride",
           artist: "XTC",
-          src: require("./assets/making-plans.mp3")
+          src: require("./assets/love-and-ride.mp3")
         }
       ],
       player: new Audio()
