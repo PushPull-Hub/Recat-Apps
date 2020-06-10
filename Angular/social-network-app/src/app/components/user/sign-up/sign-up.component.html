@@ -1,0 +1,87 @@
+<div
+  class="container mt-5"
+  style="
+    background-color: lightgray;
+    width: 650px;
+    border-radius: 10px;
+    margin-top: 200px;
+  "
+>
+  <form id="form">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>User Name</label>
+        <input type="text" class="form-control" id="inputUserName" />
+        <small
+          id="emailHelp"
+          class="form-text text-muted"
+          style="color: #cc0000;"
+        >
+          Required Filed !
+        </small>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Password</label>
+        <input type="password" class="form-control" id="inputPassword" />
+        <small
+          id="emailHelp"
+          class="form-text text-muted"
+          style="color: #cc0000;"
+        >
+          Required Filed !
+        </small>
+      </div>
+    </div>
+    <div class="form-group" style="margin-left: 15px; margin-right: 15px;">
+      <label>Email</label>
+      <input type="email" class="form-control" id="inputEmail" />
+      <small
+        id="emailHelp"
+        class="form-text text-muted"
+        style="color: #cc0000;"
+      >
+        Required Filed !
+      </small>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>First Name</label>
+        <input type="text" class="form-control" id="inputFirstName" />
+        <small
+          id="emailHelp"
+          class="form-text text-muted"
+          style="color: #cc0000;"
+        >
+          Required Filed !
+        </small>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Last Name </label>
+        <input type="text" class="form-control" id="inputLastName" />
+        <small
+          id="emailHelp"
+          class="form-text text-muted"
+          style="color: #cc0000;"
+        >
+          Required Filed !
+        </small>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      style="background-color: green; margin-left: 16px; margin-top: 20px;"
+      (click)="signUp()"
+    >
+      Sign up
+    </button>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      style="margin-left: 16px; background-color: #003e8f; margin-top: 20px;"
+    >
+      Already have account
+    </button>
+  </form>
+</div>
