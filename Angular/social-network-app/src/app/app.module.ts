@@ -9,13 +9,15 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { Routes, RouterModule } from '@angular/router';
-import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password/reset-password.component';
+import { VerifyEmailComponent } from './components/reset-password/verify-email/verify-email.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
+  { path: 'verify-email', component: VerifyEmailComponent },
 ];
 
 @NgModule({
@@ -26,6 +28,7 @@ const appRoutes: Routes = [
     HomeComponent,
     HeaderComponent,
     ResetPasswordComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,

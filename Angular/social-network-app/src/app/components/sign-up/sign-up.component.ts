@@ -11,22 +11,22 @@ export class SignUpComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-  
-  onSubmit(f: NgForm) {
 
-       const email = f.value.email;
-       const firstName = f.value.firstname;
-       const password = f.value.password;
-       const secondName = f.value.secondname ;
-       const userName = f.value.username
-       localStorage.setItem ( 'user', JSON.stringify({
-              username: userName,
-              password: password,
-              email: email,
-              firstname: firstName,
-              secondname: secondName,
-             })
-            )
-           }
-  
+  onSubmit(f: NgForm) {
+    const email = f.value.email;
+    const firstName = f.value.firstname;
+    const password = f.value.password;
+    const secondName = f.value.secondname;
+    const userName = f.value.username;
+    localStorage.setItem(
+      'user',
+      JSON.stringify({
+        username: userName,
+        password: password,
+        email: email,
+        firstname: firstName,
+        secondname: secondName,
+      })
+    );
+  }
 }
