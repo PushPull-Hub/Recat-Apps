@@ -9,20 +9,15 @@
 >
   <form style="padding: 15px; margin-top: 30px; margin-bottom: 30px;">
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-      />
+      <label>Email address</label>
+      <input type="email" class="form-control" id="InputEmail1" />
       <small id="emailHelp" class="form-text text-muted" style="color: #cc0000;"
         >Insert a valid email
       </small>
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" />
+      <label>Password</label>
+      <input type="password" class="form-control" id="InputPassword1" />
       <small id="emailHelp" class="form-text text-muted" style="color: #cc0000;"
         >Insert a valid password
       </small>
@@ -40,6 +35,7 @@
       type="submit"
       class="btn btn-primary"
       style="background-color: green;"
+      (click)="signIn()"
     >
       Sign in
     </button>
