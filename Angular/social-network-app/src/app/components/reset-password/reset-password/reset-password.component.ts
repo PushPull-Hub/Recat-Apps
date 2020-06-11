@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reset-password',
@@ -7,12 +8,23 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./reset-password.component.css'],
 })
 export class ResetPasswordComponent implements OnInit {
-  constructor() {}
+  incorrectConfirmedPass = false;
+  user = localStorage.getItem('user');
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
   onSubmit(f: NgForm) {
-    console.log(f.value);
     const newPass = f.value.newpass;
     const newPassConfirmation = f.value.newconfirmedpass;
+    if (newPass !== newPassConfirmation) {
+      this.incorrectConfirmedPass = true;
+    } else if (newPass === newPassConfirmation) {
+      this.incorrectConfirmedPass = false;
+      this.user = this.user ? JSON.parse(this.user) : {};
+      this.user['password'] = newPass.toString();
+      localStorage.setItem('user', JSON.stringify(this.user));
+      this.router.navigate(['/home']);
+      alert('password has been changed ');
+    }
   }
 }
