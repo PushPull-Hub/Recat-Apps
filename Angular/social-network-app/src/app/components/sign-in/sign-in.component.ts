@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,15 +12,11 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {}
 
-  signIn = () => {
-    const email = (<HTMLInputElement>document.getElementById('InputEmail1'))
-      .value;
-    const password = (<HTMLInputElement>(
-      document.getElementById('InputPassword1')
-    )).value;
-    console.log(this.user);
+  onSubmit(f: NgForm) {
+    const email = f.value.email;
+    const password = f.value.password;
     if (this.user.email === email && this.user.password === password) {
       console.log('Registred ');
     }
-  };
+  }
 }
