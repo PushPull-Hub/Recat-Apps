@@ -67,15 +67,19 @@
       style="background-color: green;"
       [disabled]="f.invalid"
     >
-      Sign in
+      <i class="fa fa-sign-in" aria-hidden="true"></i>
+      <span style="margin-left: 5px;"> Sign in</span>
     </button>
     <button
       type="submit"
       class="btn btn-primary"
-      style="margin-left: 50px; background-color: #003e8f;"
+      style="margin-left: 40px; background-color: #003e8f;"
     >
-      <a routerLink="/sign-up" style="text-decoration: none; color: white;"
-        >Sign up</a
+      <i class="fa fa-user-plus" aria-hidden="true"></i>
+      <span style="margin-left: 5px;"
+        ><a routerLink="/sign-up" style="text-decoration: none; color: white;"
+          >Sign up</a
+        ></span
       >
     </button>
   </form>

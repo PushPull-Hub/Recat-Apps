@@ -9,11 +9,13 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { Routes, RouterModule } from '@angular/router';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
 ];
 
 @NgModule({
@@ -23,6 +25,7 @@ const appRoutes: Routes = [
     SignUpComponent,
     HomeComponent,
     HeaderComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,
