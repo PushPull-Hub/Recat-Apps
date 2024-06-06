@@ -1,3 +1,3 @@
-# my-app-music
+# VueTunes
 
-Simple App Created By Vue.JS Framework For Playing Music
+App Created By Vue.JS Framework For Playing Music
