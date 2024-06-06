@@ -5,7 +5,7 @@
     </header>
     <main>
       <section class="player">
-        <h2 class="song-title">{{current.title}}</h2>
+        <h2 class="song-title">{{ current.title }}</h2>
         <div class="controls">
           <button class="prev" v-on:click="previousSong">Prev</button>
           <button class="play" v-if="!isPlaying" @click="play">Play</button>
@@ -19,8 +19,10 @@
           v-for="song in songs"
           :key="song.src"
           v-on:click="play(song)"
-          :class="(song.src == current.src) ? 'song playing' : 'song'"
-        >{{song.title}}</button>
+          :class="song.src == current.src ? 'song playing' : 'song'"
+        >
+          {{ song.title }}
+        </button>
       </section>
     </main>
   </div>
@@ -36,22 +38,22 @@ export default {
       index: 1,
       songs: [
         {
-          title: "Blue Monday",
-          artist: "Golria Gainor",
-          src: require("./assets/blue-monday.mp3")
+          title: "Diet Mountain Dew",
+          artist: "Lana Del Rey",
+          src: require("./assets/diet-mountain-dew.mp3"),
         },
         {
-          title: "Let Me Go",
-          artist: "Madonna ",
-          src: require("./assets/let-me-go.mp3")
+          title: "Titanium",
+          artist: "David Guetta",
+          src: require("./assets/titanium.mp3"),
         },
         {
-          title: "Love and Ride",
-          artist: "XTC",
-          src: require("./assets/love-and-ride.mp3")
-        }
+          title: "Four Seasons",
+          artist: "Vivaldi",
+          src: require("./assets/four-season.mp3"),
+        },
       ],
-      player: new Audio()
+      player: new Audio(),
     };
   },
 
@@ -83,17 +85,16 @@ export default {
       }
       this.current = this.songs[this.index];
       this.play(this.current);
-    }
+    },
   },
 
   created() {
     this.current = this.songs[0];
     this.player.src = this.current.src;
     // this.player.play();
-  }
+  },
 };
 </script>
-
 
 <style>
 * {
